@@ -1,0 +1,35 @@
+Selenium WebDriver Architecture:
+
+Diagram:                                                                         \HTTP over HTTP Server/
+  -------------------------          Convertion happpen                  -----------------          ----------
+| Java, Rubym, Python, C++ | ---- JSON (Wireless Protocol Over HTTP --> | Browser Drivers | <----> | Browsers |
+ --------------------------                                              -----------------          ----------
+{Selenium Client Library}                                                          \HTTP over HTTP Server/
+
+
+	•	After you trigger the Test, complete Selenium code (Client) which we have written   will be converted to Json format
+	•	Generated Json is sent to Browser Driver (Server) through http Protocol
+    Note: Each browser contains a separate browser driver
+	•	Browser drivers communicate with its respective browser and executes the commands by interpreting Json which It received on the browser.
+	•	Browser Driver receives responses back from the browser and it sends Json response back to Client.
+
+   =================================Below is the step by step or in simpler language to grasp the thing ==============                   
+
+If I put in simpler terms the below:
+1. Test Execution:
+
+- When you run a test, the Selenium code you wrote (Client) gets converted into a JSON format.
+
+2. Communication with Browser Driver:
+
+- The JSON commands are sent to the appropriate Browser Driver (like ChromeDriver, GeckoDriver, etc.) using the HTTP protocol.
+Note: Each browser has its own specific driver (e.g., Chrome has ChromeDriver, Firefox has GeckoDriver).
+
+3.Browser Driver's Role:
+
+- The Browser Driver interprets the JSON commands and communicates with the browser to execute the instructions.
+
+4. Response Handling:
+
+- Once the browser completes the commands, the Browser Driver collects the results and sends a JSON response back to the Client.
+This architecture enables smooth communication between your test code and the web browser.
