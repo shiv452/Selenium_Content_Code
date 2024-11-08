@@ -1,0 +1,41 @@
+Basic Java JDK Step 
+
+1. Windows Users
+- Download and installed the java which you're going to use in your project or based on the project standars.
+- Go the Oracle website and download the latest version or stable version of java.
+link : https://www.oracle.com/java/technologies/downloads/
+- Once download is done, then go ahead and set the java_home path in you local machine.
+- To do that go to your C: drive --> Go to ProgramFiles --> Java folder
+Note: If you already installed java in previously you may find differ-differ version in you java folder.
+- Go ahead and select which JDK you are going to use in your automation. Go inside the jdk file and copy the path.
+- Now Search "System Environment vairables" 
+- System Propteties window will pop up in front of you, click on "Environmental varables" button which will placed at the right bottom.
+Note: If you already created the variable and path previously you can modify as per the project or if you want to update the jdk version.
+- If you're doing first time then, click on "New" btn and put in the varable grid "JAVA_HOME" and in the path grid "<Placed the path that you just copied>"
+- You also mentioned the path for bin directory same go back to to jdk folder and copy the bin path.
+- Create if it's first time give name as "PATH" and "<placed the copied path>".
+- Now go ahead and check weather it is working or not you are able to see the latest version that you just placed in the varible.
+Note: To check which version of jdk you're using just open terminal window and type "java -v". If you see your version then it's done.
+
+2. Mac Users.
+- After downloading and installtion follow the command.
+- Open your terminal and type this command.
+         open /Library/Java/JavaVirtualMachines
+- This will open the where jdk is placed.
+- To Setup the jdk in your mac.
+- Go to the home path to get the path type
+      pwd
+- get the list all the folder in home
+    ls -al
+- Check for .zshrc file, if not present then you've to create by using "touch .zshrch" this command will create a file for you.
+- Now, if file is present in you system then,
+    open .zshrc
+- This will open you the file in txt formate easy to operate.
+- Now you've to set the path, for that copy paste the lines:
+    export PATH="/opt/homebrew/bin:$PATH"
+    export JAVA_HOME=$(/usr/libexec/java_home -V 23.0.1)
+    export PATH=$JAVA_HOME/bin:$PATH
+- Save the file and closed. Now to verify weather all changes are present open again and verify.
+- Once all are done. Now, it's time to load the file in the terminal for that command is:
+     source .zshrc
+- All set now you can start working or you can write simple hello world program to check weather it's working or not.
